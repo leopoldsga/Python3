@@ -41,6 +41,9 @@ while True:
     command = str(input('Input command$ '))  
     print(ssh.execute(command))
 ```
+
+# 3 References
+- [paramiko-SSHClient]([http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQwMzU3MTgxLDE0MTI4NzU1MTldfQ==
+eyJoaXN0b3J5IjpbNDU5MDg3NzEwLDE0MTI4NzU1MTldfQ==
 -->
