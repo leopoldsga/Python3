@@ -50,9 +50,13 @@ channel = trans.open_session()
 #invoke_shell.
 channel.get_pty()
 
-
+#Request an interactive shell session on this channel. If the server allows it, the channel 
+#will then be directly connected to the stdin, stdout, and stderr of the shell.
 channel.invoke_shell()
+
 while True:
+	#Put stdin and channel into readlist
+	#select is aware
     readlist, writelist, errlist = select.select([channel, sys.stdin,], [], [])
     if sys.stdin in readlist:
         input_cmd = sys.stdin.readline()
@@ -78,8 +82,8 @@ trans.close()
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 - [SSH-return-immediately](https://www.jianshu.com/p/8d1766c23523)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTMxNDczOTAsLTE4MzI0MTA0MDEsLT
-IxNzIxNzg2MiwxMTU2NzAxNTc5LC0xMjgxNTU3NTE0LDMwNDI3
-OTk1MiwtMTcyMjc4MTk3OSw0NTkwODc3MTAsMTQxMjg3NTUxOV
-19
+eyJoaXN0b3J5IjpbLTkwNDcwMjA4OCwtMTgzMjQxMDQwMSwtMj
+E3MjE3ODYyLDExNTY3MDE1NzksLTEyODE1NTc1MTQsMzA0Mjc5
+OTUyLC0xNzIyNzgxOTc5LDQ1OTA4NzcxMCwxNDEyODc1NTE5XX
+0=
 -->
