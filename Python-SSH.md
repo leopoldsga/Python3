@@ -1,7 +1,11 @@
 # SSH based on python
-Use python3 to connect to remote server
+Use python3 to connect to remote server.
 
-# 1 Class implementation
+# 1 Preliminaries
+## 1.1 exec_command
+1. Each exec_command() would open one new channel 
+
+# 2 Class implementation
 The established session should be stable and available.
 ```python
 import paramiko  
@@ -33,7 +37,7 @@ class ShellHandler:
         msg = stdout.read(1024)  
         return msg.decode('utf-8')
 ```
-# 2 Running code
+# 3 Running code
 ```python
 from helloWorld import *  
   
@@ -44,12 +48,13 @@ while True:
     print(ssh.execute(command))
 ```
 
-# 3 References
+# 4 References
 - [paramiko-SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient)
 - [paramiko-channel](http://docs.paramiko.org/en/2.4/api/channel.html)
 - [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODE1NTc1MTQsMzA0Mjc5OTUyLC0xNz
-IyNzgxOTc5LDQ1OTA4NzcxMCwxNDEyODc1NTE5XX0=
+eyJoaXN0b3J5IjpbLTExNzA1NzI4OTYsLTEyODE1NTc1MTQsMz
+A0Mjc5OTUyLC0xNzIyNzgxOTc5LDQ1OTA4NzcxMCwxNDEyODc1
+NTE5XX0=
 -->
