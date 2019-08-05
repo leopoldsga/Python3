@@ -9,11 +9,14 @@ import paramiko
   
 class ShellHandler:  
     def __init__(self, host, user, psw): 
-		 #create one ssh instance 
+		 #create one ssh instance and do some options
          self.ssh = paramiko.SSHClient()  
          self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-         #connect to   
-         self.ssh.connect(host, username=user, password=psw, port=22)  
+         
+         #connect to remote host  
+         self.ssh.connect(host, username=user, password=psw, port=22)
+         
+         #generate one new inter
          channel = self.ssh.invoke_shell()  
          self.stdin = channel.makefile('wb')  
          self.stdout = channel.makefile('r')  
@@ -39,5 +42,5 @@ while True:
     print(ssh.execute(command))
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwOTUwNTQxMSwxNDEyODc1NTE5XX0=
+eyJoaXN0b3J5IjpbMjY5OTE0OTQzLDE0MTI4NzU1MTldfQ==
 -->
