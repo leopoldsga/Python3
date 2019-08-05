@@ -45,8 +45,12 @@ trans.auth_password(username='seagal', password='sga')
 #or  "x11")
 channel = trans.open_session()
 
-#
+#Request a pseudo-terminal from the server. This is usually used right after creating a client 
+#channel, to ask the server to provide some basic terminal semantics for a shell invoked with 
+#invoke_shell.
 channel.get_pty()
+
+
 channel.invoke_shell()
 while True:
     readlist, writelist, errlist = select.select([channel, sys.stdin,], [], [])
@@ -69,12 +73,13 @@ trans.close()
 # 3 References
 - [paramiko-Transport](http://docs.paramiko.org/en/2.6/api/transport.html)
 - [paramiko-SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient)
-- [paramiko-channel](http://docs.paramiko.org/en/2.4/api/channel.html)
+- [paramiko-channel]((http://docs.paramiko.org/en/2.6/api/channel.html)
 - [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 - [SSH-return-immediately](https://www.jianshu.com/p/8d1766c23523)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzI0MTA0MDEsLTIxNzIxNzg2MiwxMT
-U2NzAxNTc5LC0xMjgxNTU3NTE0LDMwNDI3OTk1MiwtMTcyMjc4
-MTk3OSw0NTkwODc3MTAsMTQxMjg3NTUxOV19
+eyJoaXN0b3J5IjpbLTEwOTMxNDczOTAsLTE4MzI0MTA0MDEsLT
+IxNzIxNzg2MiwxMTU2NzAxNTc5LC0xMjgxNTU3NTE0LDMwNDI3
+OTk1MiwtMTcyMjc4MTk3OSw0NTkwODc3MTAsMTQxMjg3NTUxOV
+19
 -->
