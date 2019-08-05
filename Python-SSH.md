@@ -45,9 +45,10 @@ while True:
 ```
 
 # 3 References
-- [paramiko-SSHClient]([http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient))
-- [paramiko-channel]([http://docs.paramiko.org/en/2.4/api/channel.html](http://docs.paramiko.org/en/2.4/api/channel.html))
+- [paramiko-SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient)
+- [paramiko-channel](http://docs.paramiko.org/en/2.4/api/channel.html)
+- [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzYzNjM1ODQ5LDQ1OTA4NzcxMCwxNDEyOD
-c1NTE5XX0=
+eyJoaXN0b3J5IjpbLTE3MjI3ODE5NzksNDU5MDg3NzEwLDE0MT
+I4NzU1MTldfQ==
 -->
