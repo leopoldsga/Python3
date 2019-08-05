@@ -29,7 +29,15 @@ default_key_file = os.path.join(os.environ['HOME'], '.ssh', 'id_rsa')
 prikey = paramiko.RSAKey.from_private_key_file(default_key_file)
 trans.auth_publickey(username='super', key=prikey)
 '''
+
+#login with password
+#auth_password(_username_, _password_, _event=None_, _fallback=True_)
+#Authenticate to the server using a password. The username and password are sent over an 
+#encrypted link.
 trans.auth_password(username='seagal', password='sga')
+
+#open_session(_window_size=None_, _max_packet_size=None_, _timeout=None_)
+#
 channel = trans.open_session()
 channel.get_pty()
 channel.invoke_shell()
@@ -59,7 +67,7 @@ trans.close()
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 - [SSH-return-immediately](https://www.jianshu.com/p/8d1766c23523)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM1Mzk2OTExLC0yMTcyMTc4NjIsMTE1Nj
+eyJoaXN0b3J5IjpbMTE3NTQ3NTYwLC0yMTcyMTc4NjIsMTE1Nj
 cwMTU3OSwtMTI4MTU1NzUxNCwzMDQyNzk5NTIsLTE3MjI3ODE5
 NzksNDU5MDg3NzEwLDE0MTI4NzU1MTldfQ==
 -->
