@@ -17,6 +17,7 @@ import sys
 remoteIP = '127.0.0.1'
 port = 22
 
+#Establish one socket
 trans = paramiko.Transport((remoteIP,port))
 trans.start_client()
 
@@ -48,13 +49,14 @@ trans.close()
 ```
 
 # 3 References
+- [paramiko-Transport](http://docs.paramiko.org/en/2.6/api/transport.html)
 - [paramiko-SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient)
 - [paramiko-channel](http://docs.paramiko.org/en/2.4/api/channel.html)
 - [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 - [SSH-return-immediately](https://www.jianshu.com/p/8d1766c23523)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjQ5NDQxNDAsLTIxNzIxNzg2MiwxMT
-U2NzAxNTc5LC0xMjgxNTU3NTE0LDMwNDI3OTk1MiwtMTcyMjc4
-MTk3OSw0NTkwODc3MTAsMTQxMjg3NTUxOV19
+eyJoaXN0b3J5IjpbLTI5MDQ5MzYyMSwtMjE3MjE3ODYyLDExNT
+Y3MDE1NzksLTEyODE1NTc1MTQsMzA0Mjc5OTUyLC0xNzIyNzgx
+OTc5LDQ1OTA4NzcxMCwxNDEyODc1NTE5XX0=
 -->
