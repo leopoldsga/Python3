@@ -41,8 +41,11 @@ trans.auth_password(username='seagal', password='sga')
 #open_channel with an argument of "session".
 #open_channel(_kind_, _dest_addr=None_, _src_addr=None_, _window_size=None_, 
 #_max_packet_size=None_, _timeout=None_)
-#kind([_str_](https://docs.python.org/2.7/library/functions.html#str "(in Python v2.7)")) – the kind of channel requested (usually  `"session"`,  `"forwarded-tcpip"`,  `"direct-tcpip"`, or  `"x11"`)
+#kind(the kind of channel requested (usually  "session",  "forwarded-tcpip",  "direct-tcpip", 
+#or  "x11")
 channel = trans.open_session()
+
+#
 channel.get_pty()
 channel.invoke_shell()
 while True:
@@ -71,7 +74,7 @@ trans.close()
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 - [SSH-return-immediately](https://www.jianshu.com/p/8d1766c23523)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE5MzMzMDIzLC0yMTcyMTc4NjIsMTE1Nj
-cwMTU3OSwtMTI4MTU1NzUxNCwzMDQyNzk5NTIsLTE3MjI3ODE5
-NzksNDU5MDg3NzEwLDE0MTI4NzU1MTldfQ==
+eyJoaXN0b3J5IjpbLTE4MzI0MTA0MDEsLTIxNzIxNzg2MiwxMT
+U2NzAxNTc5LC0xMjgxNTU3NTE0LDMwNDI3OTk1MiwtMTcyMjc4
+MTk3OSw0NTkwODc3MTAsMTQxMjg3NTUxOV19
 -->
