@@ -17,7 +17,7 @@ class ShellHandler:
          self.ssh.connect(host, username=user, password=psw, port=22)
          
          #generate one new interactive shell on the remote host
-         channel = self.ssh.invoke_shell()\
+         channel = self.ssh.invoke_shell()
          
          #Return a file-like object associated with this channel.
          self.stdin = channel.makefile('wb')  
@@ -48,8 +48,8 @@ while True:
 - [paramiko-SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient)
 - [paramiko-channel](http://docs.paramiko.org/en/2.4/api/channel.html)
 - [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
-- [https://www.cnblogs.com/franknihao/p/6536255.html](https://www.cnblogs.com/franknihao/p/6536255.html)
+- [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NTczNDczOCwzMDQyNzk5NTIsLTE3Mj
-I3ODE5NzksNDU5MDg3NzEwLDE0MTI4NzU1MTldfQ==
+eyJoaXN0b3J5IjpbLTEyODE1NTc1MTQsMzA0Mjc5OTUyLC0xNz
+IyNzgxOTc5LDQ1OTA4NzcxMCwxNDEyODc1NTE5XX0=
 -->
