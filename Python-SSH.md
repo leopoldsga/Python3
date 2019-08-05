@@ -16,7 +16,7 @@ class ShellHandler:
          #connect to remote host  
          self.ssh.connect(host, username=user, password=psw, port=22)
          
-         #generate one new inter
+         #generate one new interactive shell on the remote host
          channel = self.ssh.invoke_shell()  
          self.stdin = channel.makefile('wb')  
          self.stdout = channel.makefile('r')  
@@ -42,5 +42,5 @@ while True:
     print(ssh.execute(command))
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjY5OTE0OTQzLDE0MTI4NzU1MTldfQ==
+eyJoaXN0b3J5IjpbOTQwMzU3MTgxLDE0MTI4NzU1MTldfQ==
 -->
