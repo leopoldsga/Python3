@@ -3,7 +3,7 @@ Use python3 to connect to remote server.
 
 # 1 Preliminaries
 ## 1.1 exec_command
-1. Each exec_command() would open one new channel of which the directory would be the root of the user.
+1. Each exec_command() would open one new channel of which the working directory would be the root of the user.
 
 # 2 Class implementation
 The established session should be stable and available.
@@ -54,7 +54,7 @@ while True:
 - [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIwODI4MjIwLC0xMjgxNTU3NTE0LDMwND
-I3OTk1MiwtMTcyMjc4MTk3OSw0NTkwODc3MTAsMTQxMjg3NTUx
-OV19
+eyJoaXN0b3J5IjpbMTE1NjcwMTU3OSwtMTI4MTU1NzUxNCwzMD
+QyNzk5NTIsLTE3MjI3ODE5NzksNDU5MDg3NzEwLDE0MTI4NzU1
+MTldfQ==
 -->
