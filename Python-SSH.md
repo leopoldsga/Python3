@@ -48,7 +48,8 @@ while True:
 - [paramiko-SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient)
 - [paramiko-channel](http://docs.paramiko.org/en/2.4/api/channel.html)
 - [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
+- [https://www.cnblogs.com/franknihao/p/6536255.html](https://www.cnblogs.com/franknihao/p/6536255.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA0Mjc5OTUyLC0xNzIyNzgxOTc5LDQ1OT
-A4NzcxMCwxNDEyODc1NTE5XX0=
+eyJoaXN0b3J5IjpbMTA4NTczNDczOCwzMDQyNzk5NTIsLTE3Mj
+I3ODE5NzksNDU5MDg3NzEwLDE0MTI4NzU1MTldfQ==
 -->
