@@ -46,7 +46,8 @@ while True:
 
 # 3 References
 - [paramiko-SSHClient]([http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient))
+- [paramiko-channel]([http://docs.paramiko.org/en/2.4/api/channel.html](http://docs.paramiko.org/en/2.4/api/channel.html))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA4MDY3NzY4LDQ1OTA4NzcxMCwxNDEyOD
+eyJoaXN0b3J5IjpbNzYzNjM1ODQ5LDQ1OTA4NzcxMCwxNDEyOD
 c1NTE5XX0=
 -->
