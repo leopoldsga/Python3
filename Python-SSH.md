@@ -5,13 +5,14 @@ Use python3 to connect to remote server
 The established session should be stable and available.
 ```python
 import paramiko  
-import re  
   
   
 class ShellHandler:  
-    def __init__(self, host, user, psw):  
+    def __init__(self, host, user, psw): 
+		 #create one ssh instance 
          self.ssh = paramiko.SSHClient()  
-         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())  
+         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+         #connect to   
          self.ssh.connect(host, username=user, password=psw, port=22)  
          channel = self.ssh.invoke_shell()  
          self.stdin = channel.makefile('wb')  
@@ -38,5 +39,5 @@ while True:
     print(ssh.execute(command))
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxMjg3NTUxOV19
+eyJoaXN0b3J5IjpbLTcwOTUwNTQxMSwxNDEyODc1NTE5XX0=
 -->
