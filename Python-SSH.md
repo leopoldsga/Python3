@@ -8,54 +8,49 @@ Use python3 to connect to remote server.
 # 2 Class implementation
 The established session should be stable and available.
 ```python
-import paramiko  
-  
-  
-class ShellHandler:  
-    def __init__(self, host, user, psw): 
-		 #create one ssh instance and do some options
-         self.ssh = paramiko.SSHClient()  
-         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-         
-         #connect to remote host  
-         self.ssh.connect(host, username=user, password=psw, port=22)
-         
-         #generate one new interactive shell on the remote host
-         channel = self.ssh.invoke_shell()
-         
-         #Return a file-like object associated with this channel.
-         self.stdin = channel.makefile('wb')  
-         self.stdout = channel.makefile('r')  
-  
-  
-    def __del__(self):  
-         self.ssh.close()  
-  
-  
-    def execute(self, cmd):  
-        self.(cmd)  
-        msg = stdout.read(1024)  
-        return msg.decode('utf-8')
-```
-# 3 Running code
-```python
-from helloWorld import *  
-  
-ssh = ShellHandler(host,username,passwd)  
-  
-while True:  
-    command = str(input('Input command$ '))  
-    print(ssh.execute(command))
+import paramiko
+import os
+import select
+import sys
+
+trans = paramiko.Transport(('10.67.118.170', 22))
+trans.start_client()
+
+'''
+default_key_file = os.path.join(os.environ['HOME'], '.ssh', 'id_rsa')
+prikey = paramiko.RSAKey.from_private_key_file(default_key_file)
+trans.auth_publickey(username='super', key=prikey)
+'''
+trans.auth_password(username='seagal', password='sga')
+channel = trans.open_session()
+channel.get_pty()
+channel.invoke_shell()
+while True:
+    readlist, writelist, errlist = select.select([channel, sys.stdin,], [], [])
+    if sys.stdin in readlist:
+        input_cmd = sys.stdin.readline()
+        channel.sendall(input_cmd)
+
+    if channel in readlist:
+        result = channel.recv(1024)
+        if len(result) == 0:
+            print("\r\n**** EOF **** \r\n")
+            break
+        sys.stdout.write(result.decode())
+        sys.stdout.flush()
+
+channel.close()
+trans.close()
 ```
 
-# 4 References
+# 3 References
 - [paramiko-SSHClient](http://docs.paramiko.org/en/2.4/api/client.html#paramiko.client.SSHClient)
 - [paramiko-channel](http://docs.paramiko.org/en/2.4/api/channel.html)
 - [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 - [SSH-return-immediately](https://www.jianshu.com/p/8d1766c23523)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNzIxNzg2MiwxMTU2NzAxNTc5LC0xMj
-gxNTU3NTE0LDMwNDI3OTk1MiwtMTcyMjc4MTk3OSw0NTkwODc3
-MTAsMTQxMjg3NTUxOV19
+eyJoaXN0b3J5IjpbLTYwOTQyODg1LC0yMTcyMTc4NjIsMTE1Nj
+cwMTU3OSwtMTI4MTU1NzUxNCwzMDQyNzk5NTIsLTE3MjI3ODE5
+NzksNDU5MDg3NzEwLDE0MTI4NzU1MTldfQ==
 -->
