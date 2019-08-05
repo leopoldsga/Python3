@@ -55,8 +55,8 @@ channel.get_pty()
 channel.invoke_shell()
 
 while True:
-	#Put stdin and channel into readlist
-	#select is aware
+	#Put stdin and channel into readlist.
+	#select is aware of whether the status of stdin or channel is changed.
     readlist, writelist, errlist = select.select([channel, sys.stdin,], [], [])
     if sys.stdin in readlist:
         input_cmd = sys.stdin.readline()
@@ -82,8 +82,8 @@ trans.close()
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
 - [SSH-return-immediately](https://www.jianshu.com/p/8d1766c23523)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNDcwMjA4OCwtMTgzMjQxMDQwMSwtMj
-E3MjE3ODYyLDExNTY3MDE1NzksLTEyODE1NTc1MTQsMzA0Mjc5
-OTUyLC0xNzIyNzgxOTc5LDQ1OTA4NzcxMCwxNDEyODc1NTE5XX
-0=
+eyJoaXN0b3J5IjpbLTEzMzgzMzYwNjYsLTE4MzI0MTA0MDEsLT
+IxNzIxNzg2MiwxMTU2NzAxNTc5LC0xMjgxNTU3NTE0LDMwNDI3
+OTk1MiwtMTcyMjc4MTk3OSw0NTkwODc3MTAsMTQxMjg3NTUxOV
+19
 -->
