@@ -53,9 +53,9 @@ while True:
 - [paramiko-channel](http://docs.paramiko.org/en/2.4/api/channel.html)
 - [paramiko-instance](https://www.cnblogs.com/linyfeng/p/8964753.html)
 - [paramiko-exce_command](https://www.cnblogs.com/franknihao/p/6536255.html)
-- 
+- [SSH-return-immediately](https://www.jianshu.com/p/8d1766c23523)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNzU5MTMwMiwxMTU2NzAxNTc5LC0xMj
+eyJoaXN0b3J5IjpbLTIxNzIxNzg2MiwxMTU2NzAxNTc5LC0xMj
 gxNTU3NTE0LDMwNDI3OTk1MiwtMTcyMjc4MTk3OSw0NTkwODc3
 MTAsMTQxMjg3NTUxOV19
 -->
