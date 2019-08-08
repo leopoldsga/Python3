@@ -1,0 +1,1 @@
+In python3, if we use `set` function to define the value of one variable such as IntVar and StringVar, we should explicitly call `get` function to obtain the value stored in the particular variable object.
