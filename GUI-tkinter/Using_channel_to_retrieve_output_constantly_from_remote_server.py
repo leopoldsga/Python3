@@ -49,7 +49,7 @@ chooseOneStack = IntVar()
 kernelCmd = StringVar()
 kernelCmd.set('ps aux | grep ssh'+'\n')
 
-## vls-ldp vpp command as one string variable
+## Userspace command as one string variable
 vlsCmd = StringVar()
 vlsCmd.set('ifconfig'+'\n')
 
