@@ -6,26 +6,29 @@ from tkinter import ttk
 
 window = Tk()
 
-window.title("Welcome to LikeGeeks app")
+window.title("Welcome to progress app")
 
 window.geometry('350x200')
 
+step = 10
 counter = 0
 def counter_label(label):
   def count():
     global counter
-    counter += 1
+    counter += step
     label.config(text=str(counter)+'%')
-    label.after(1000, count)
+    if counter != 100:
+        label.after(1000, count)
   count()
 
 prog = 0
 def counter_prog(bar):
   def count():
     global prog
-    prog += 1
+    prog += step
     bar['value'] = prog
-    bar.after(1000, count)
+    if prog != 100:
+        bar.after(1000, count)
   count()
 
 
